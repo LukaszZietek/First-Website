@@ -1,0 +1,52 @@
+﻿@model Repozytorium.Models.Ogloszenie
+
+@{
+    ViewBag.Tytul = "Szczegóły";
+    ViewBag.SlowaKluczowe = "Szczegóły, konkretny rekord";
+    ViewBag.Opis = "Szczegóły dotyczące konkretnego wpisu w tabeli";
+}
+
+<h2>Szczegóły Rekordu</h2>
+
+<div>
+    <h4>Ogloszenie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UzytkownikId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UzytkownikId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tresc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tresc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tytul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tytul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDodania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDodania)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Wróc do listy", "Index", null, new { @class = "btn btn-info" })
+</p>

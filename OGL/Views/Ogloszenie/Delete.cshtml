@@ -1,0 +1,66 @@
+﻿@model Repozytorium.Models.Ogloszenie
+
+@{
+    ViewBag.Tytul = "Usuwanie elementu";
+    ViewBag.Opis = "Usuwanie elementu nr" + Model.Id;
+    ViewBag.SlowaKluczowe = "Ogloszenie, " + Model.Id + "usuwanie";
+}
+
+<h2>Usuwanie elementu nr @Model.Id</h2>
+
+@if (ViewBag.Blad == true)
+{
+    <div class="alert alert-danger" role="alert">
+        Wystąpił błąd podczas usuwania. <br/>
+        Spróbuj Ponownie
+    </div>
+}
+
+<h3>Czy jesteś pewien, że chcesz usunąć ten element? </h3>
+<div>
+    <h4>Ogloszenie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UzytkownikId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UzytkownikId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tresc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tresc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tytul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tytul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDodania)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDodania)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-danger" onclick="return confirm('Czy na pewno chcesz usunać?')" />
+            @Html.ActionLink("Wróć do listy", "Index",null, new { @class = "btn btn-info" })
+        </div>
+    }
+</div>
