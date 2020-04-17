@@ -1,9 +1,10 @@
-﻿@model Repozytorium.Models.Ogloszenie
+﻿@using Microsoft.AspNet.Identity
+@model Repozytorium.Models.Ogloszenie
 
 @{
-    ViewBag.Tytul = "Szczegóły";
+    ViewBag.Tytul = "Szczegóły ogłoszenia nr:" + Model.Id;
     ViewBag.SlowaKluczowe = "Szczegóły, konkretny rekord";
-    ViewBag.Opis = "Szczegóły dotyczące konkretnego wpisu w tabeli";
+    ViewBag.Opis = "Szczegóły ogłoszenia nr:" + Model.Id + "Opis do Google";
 }
 
 <h2>Szczegóły Rekordu</h2>
@@ -47,6 +48,11 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" })
-    @Html.ActionLink("Wróc do listy", "Index", null, new { @class = "btn btn-info" })
+    @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Pracownik") || Model.UzytkownikId == User.Identity.GetUserId()))
+    {
+        @Html.ActionLink("Edytuj", "Edit", new {id = Model.Id}, new {@class = "btn btn-success"})
+        @:  |
+    }
+
+    @Html.ActionLink("Wróc do listy", "Index", null, new {@class = "btn btn-info"})
 </p>

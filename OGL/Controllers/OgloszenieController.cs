@@ -84,6 +84,7 @@ namespace OGL.Controllers
         }
 
         // GET: Ogloszenie/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -96,12 +97,18 @@ namespace OGL.Controllers
             {
                 return HttpNotFound();
             }
+            else if (ogloszenie.UzytkownikId != User.Identity.GetUserId() &&
+                     !(User.IsInRole("Admin") || User.IsInRole("Pracownik")))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             return View(ogloszenie);
         }
 
         // POST: Ogloszenie/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Tresc,Tytul,DataDodania, UzytkownikId")] Ogloszenie ogloszenie)
@@ -126,6 +133,7 @@ namespace OGL.Controllers
         }
 
         // GET: Ogloszenie/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id, bool? blad)
         {
             if (id == null)
@@ -137,6 +145,10 @@ namespace OGL.Controllers
             if (ogloszenie == null)
             {
                 return HttpNotFound();
+            }
+            else if (ogloszenie.UzytkownikId != User.Identity.GetUserId() && !(User.IsInRole("Admin")))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
             if (blad != null)
