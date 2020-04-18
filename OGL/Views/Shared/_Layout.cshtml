@@ -33,6 +33,10 @@
                             {
                                 <li>@Html.ActionLink("Dodaj ogłoszenie","Create","Ogloszenie")</li>
                             }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("Lista moich ogłoszeń","MojeOgloszenia","Ogloszenie")</li>
+                            }
                             <li class ="divider"></li>
                             <li>@Html.ActionLink("Lista jako PartialView","Partial","Ogloszenie")</li>
                         </ul>

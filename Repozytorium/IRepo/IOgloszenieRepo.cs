@@ -12,6 +12,8 @@ namespace Repozytorium.IRepo
 
         IQueryable<Ogloszenie> PobierzOgloszenia();
 
+        IQueryable<Ogloszenie> PobierzStrone(int? page, int? pageSize);
+
         Ogloszenie GetOgloszenieById(int id);
 
         void UsunOgloszenie(int id);
