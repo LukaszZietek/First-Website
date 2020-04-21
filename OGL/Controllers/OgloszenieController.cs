@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -269,6 +270,11 @@ namespace OGL.Controllers
 
             return View(ogloszenia.ToPagedList<Ogloszenie>(currentPage, naStronie));
 
+        }
+
+        public ActionResult DodajKategorie()
+        {
+            throw new Exception();
         }
 
         //protected override void Dispose(bool disposing)

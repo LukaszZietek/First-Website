@@ -28,6 +28,11 @@ namespace OGL.Controllers
             return View(kategorie);
         }
 
+
+        public ActionResult Lista()
+        {
+            return View();
+        }
         public ActionResult PokazOgloszenia(int id)
         {
             var ogloszenia = _repo.PobierzOgloszeniaZKategorii(id);
@@ -35,6 +40,13 @@ namespace OGL.Controllers
             model.Ogloszenia = ogloszenia.ToList();
             model.NazwaKategorii = _repo.NazwaDlaKategorii(id);
             return View(model);
+        }
+
+        [Route("JSON")]
+        public ActionResult KategorieWJson()
+        {
+            var kategorie = _repo.PobierzKategorie();
+            return Json(kategorie, JsonRequestBehavior.AllowGet);
         }
 
 

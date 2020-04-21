@@ -24,6 +24,7 @@ namespace Repozytorium.Models
             public Uzytkownik()
             {
                 this.Ogloszenia = new HashSet<Ogloszenie>();
+                this.Zdjecia = new HashSet<Zdjecie>();
             }
 
             public string Imie { get; set; }
@@ -41,6 +42,8 @@ namespace Repozytorium.Models
             #endregion
 
             public virtual ICollection<Ogloszenie> Ogloszenia { get; private set; }
+
+            public virtual ICollection<Zdjecie> Zdjecia { get; private set; }
 
             
 

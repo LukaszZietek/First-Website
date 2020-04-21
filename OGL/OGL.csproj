@@ -282,6 +282,7 @@
     <Content Include="Views\Kategoria\Edit.cshtml" />
     <Content Include="Views\Kategoria\Index.cshtml" />
     <Content Include="Views\Kategoria\PokazOgloszenia.cshtml" />
+    <Content Include="Views\Kategoria\Lista.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +294,10 @@
     <ProjectReference Include="..\Repozytorium\Repozytorium.csproj">
       <Project>{418b0908-10bf-4664-bf93-86d6655349c7}</Project>
       <Name>Repozytorium</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{97a9b214-ad81-4c3e-baa6-33ceacbbe3d0}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

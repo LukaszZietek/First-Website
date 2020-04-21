@@ -19,28 +19,38 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Aplikacja C# 6.0 i MVC 5", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ogłoszenia<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("Lista Ogłoszeń", "Index", "Ogloszenie")</li>
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <li>@Html.ActionLink("Dodaj ogłoszenie","Create","Ogloszenie")</li>
+                                <li>@Html.ActionLink("Dodaj ogłoszenie", "Create", "Ogloszenie")</li>
                             }
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <li>@Html.ActionLink("Lista moich ogłoszeń","MojeOgloszenia","Ogloszenie")</li>
+                                <li>@Html.ActionLink("Lista moich ogłoszeń", "MojeOgloszenia", "Ogloszenie")</li>
                             }
-                            <li class ="divider"></li>
-                            <li>@Html.ActionLink("Lista jako PartialView","Partial","Ogloszenie")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Lista jako PartialView", "Partial", "Ogloszenie")</li>
                         </ul>
                     </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kategorie <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Lista Kategorii", "Index", "Kategoria")</li>
+                            <li><a href="../JSON/">Lista Kategorii w JSON</a></li>
+                            <li>@Html.ActionLink("Lista pobrana z API", "Lista", "Kategoria")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Zdjęcia","Lista","Galeria")</li>
+                    <li>@Html.ActionLink("Edytor HTML","EdytujTresc","Edytor")</li>
                 </ul>
 
                 @Html.Partial("_LoginPartial")

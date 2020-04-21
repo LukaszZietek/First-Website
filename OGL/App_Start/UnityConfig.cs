@@ -52,6 +52,7 @@ namespace OGL
             container.RegisterType<IOgloszenieRepo, OgloszenieRepo>(new PerRequestLifetimeManager());
             container.RegisterType<IOglContext, OglContext>(new PerRequestLifetimeManager());
             container.RegisterType<IKategoriaRepo, KategoriaRepo>(new PerRequestLifetimeManager());
+            container.RegisterType<IZdjecieRepo, ZdjecieRepo>(new PerRequestLifetimeManager());
 
         }
     }

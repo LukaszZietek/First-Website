@@ -16,6 +16,8 @@ namespace Repozytorium.IRepo
         DbSet<Ogloszenie> Ogloszenia { get; set; }
         DbSet<Uzytkownik> Uzytkownik { get; set; }
 
+        DbSet<Zdjecie> Zdjecia { get; set; }
+
         DbSet<Ogloszenie_Kategoria> Ogloszenie_Kategoria { get; set; }
 
         int SaveChanges();

@@ -164,6 +164,7 @@
     <Compile Include="IRepo\IKategoriaRepo.cs" />
     <Compile Include="IRepo\IOglContext.cs" />
     <Compile Include="IRepo\IOgloszenieRepo.cs" />
+    <Compile Include="IRepo\IZdjecieRepo.cs" />
     <Compile Include="Migrations\202004101453119_startowa.cs" />
     <Compile Include="Migrations\202004101453119_startowa.Designer.cs">
       <DependentUpon>202004101453119_startowa.cs</DependentUpon>
@@ -171,6 +172,10 @@
     <Compile Include="Migrations\202004111509246_1.cs" />
     <Compile Include="Migrations\202004111509246_1.Designer.cs">
       <DependentUpon>202004111509246_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004210816396_AddZdjecia.cs" />
+    <Compile Include="Migrations\202004210816396_AddZdjecia.Designer.cs">
+      <DependentUpon>202004210816396_AddZdjecia.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Kategoria.cs" />
@@ -180,9 +185,11 @@
     <Compile Include="Models\Uzytkownik.cs" />
     <Compile Include="Models\Views\AccountViewModels.cs" />
     <Compile Include="Models\Views\OgloszeniaZKategoriiViewModel.cs" />
+    <Compile Include="Models\Zdjecie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\KategoriaRepo.cs" />
     <Compile Include="Repo\OgloszenieRepo.cs" />
+    <Compile Include="Repo\ZdjecieRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="defaultDataSet.xsc">
@@ -210,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004111509246_1.resx">
       <DependentUpon>202004111509246_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004210816396_AddZdjecia.resx">
+      <DependentUpon>202004210816396_AddZdjecia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

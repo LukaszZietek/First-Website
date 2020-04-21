@@ -27,6 +27,8 @@ namespace Repozytorium.Models
         public DbSet<Ogloszenie> Ogloszenia { get; set; }
         public DbSet<Uzytkownik> Uzytkownik { get; set; }
 
+        public DbSet<Zdjecie> Zdjecia { get; set; }
+
         public DbSet<Ogloszenie_Kategoria> Ogloszenie_Kategoria { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -65,6 +65,8 @@
                     {
                         <br />
                         @Html.ActionLink("Usuń", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                        <br />
+                        @Html.ActionLink("Dodaj kategorie", "DodajKategorie", new {id = item.Id}, new { @class = "btn btn-success"})
 
                     }
                 }
