@@ -41,9 +41,12 @@ namespace OGL.Controllers
                 string nameWithExtension = imageUpload.UploadImageAndReturnImageName(fileBase);
 
                 if (nameWithExtension == null)
+                {
                     return RedirectToAction("Lista", "Galeria");
+                }
 
-                    try
+
+                try
                     {
                         Zdjecie img = new Zdjecie()
                         {

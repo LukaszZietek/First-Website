@@ -27,6 +27,7 @@ namespace Services
                 return null;
 
             List<BlobImage> imagesToUpload = GenerateImageMiniatures(image);
+            
             try
             {
                 UploadMultipleImagesToBlob(imagesToUpload);
