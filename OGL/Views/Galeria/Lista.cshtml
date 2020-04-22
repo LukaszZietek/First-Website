@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Repozytorium.Models.Zdjecie>
+@using Services;
+@using Microsoft.AspNet.Identity;
+
+
+@{
+    ViewBag.Tytul = "Lista Zdjec";
+}
+
+<h2>Lista Zdjec</h2>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div style="background-color: #e5e5e5; float: left; border-radius: 4px; margin: 5px; display: block; font-size: 10px; padding: 10px; width: 220px; max-height: 350px; text-align: center;">
+            @using (Html.BeginForm("UploadImage", "Galeria", FormMethod.Post, new {enctype = "multipart/form-data"}))
+            {
+                <input type="hidden" value ="@User.Identity.GetUserId()" id="userId"/>
+                @Html.AntiForgeryToken()
+                <fieldset>
+                    <h4>Dodaj zdjęcie</h4>
+                    <input type="file" name="fileBase" id="imgInp" onchange="checkfile(this)"/>
+                    
+                    <img id="preview_image" src="#" alt="twoje zdjęcie" class="img-thumbnail" style="max-width: 200px; max-height: 200px; display: none; margin-bottom:5px;" />
+                    <p>
+                        <input type ="submit" class ="btn btn-sm btn-success" id="UploadImage" style="display: none" value="Dodaj to zdjęcie do albumu"/>
+                    </p>
+                </fieldset>
+            }
+
+
+
+        </div>
+        
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            foreach (var modelItem in Model)
+            {
+                <div style="float: left; padding: 5px; max-width: 200px; height: 240px; text-align: center; background-color: ActiveBorder" id="@modelItem.Name">
+                    
+                    <a href="@(System.Configuration.ConfigurationManager.AppSettings["ImageUrl"] + "zdjecia/" + ImageUpload.GetFullBlobName("large", modelItem.Name))">
+                        
+                        <img src="@(System.Configuration.ConfigurationManager.AppSettings["ImageUrl"]+"zdjecia/"+ ImageUpload.GetFullBlobName("small",modelItem.Name))"
+                             alt ="" class="img-thumbnail"/>
+                    </a>
+                    <br />
+                    <a class ="btn btn-xs btn-danger usun-zdjecie2 lazy" onclick="if(confirm('Czy na pewno usunąć to zdjęcie?')){UsunZdjecie('@modelItem.Name');}">Usuń</a>
+                </div>
+            }
+        }
+    </div>
+</div>
+
