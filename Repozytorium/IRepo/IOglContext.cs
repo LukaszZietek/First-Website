@@ -20,6 +20,8 @@ namespace Repozytorium.IRepo
 
         DbSet<Ogloszenie_Kategoria> Ogloszenie_Kategoria { get; set; }
 
+        DbSet<Edytor> Edytor { get; set; }
+
         int SaveChanges();
         Database Database { get; }
 

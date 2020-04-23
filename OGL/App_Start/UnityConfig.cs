@@ -53,6 +53,7 @@ namespace OGL
             container.RegisterType<IOglContext, OglContext>(new PerRequestLifetimeManager());
             container.RegisterType<IKategoriaRepo, KategoriaRepo>(new PerRequestLifetimeManager());
             container.RegisterType<IZdjecieRepo, ZdjecieRepo>(new PerRequestLifetimeManager());
+            container.RegisterType<IEdytorRepo, EdytorRepo>(new PerRequestLifetimeManager());
 
         }
     }

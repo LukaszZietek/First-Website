@@ -8,6 +8,7 @@
     <title>@ViewBag.Tytul</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+<script src="https://cdn.tiny.cloud/1/nsd5t7dqnc7lvbzhsejgyzgmrts02x4vfbuarhfcajm785fy/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 </head>
 <body>
@@ -19,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Aplikacja C# 6.0 i MVC 5", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Aplikacja C# 6.0 i MVC 5 - Pierwsza", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -49,8 +50,10 @@
                             <li>@Html.ActionLink("Lista pobrana z API", "Lista", "Kategoria")</li>
                         </ul>
                     </li>
-                    <li>@Html.ActionLink("Zdjęcia","Lista","Galeria")</li>
-                    <li>@Html.ActionLink("Edytor HTML","EdytujTresc","Edytor")</li>
+                    
+                        <li>@Html.ActionLink("Zdjęcia", "Lista", "Galeria")</li>
+                        <li>@Html.ActionLink("Edytor HTML", "EdytujTresc", "Edytor")</li>
+                    
                 </ul>
 
                 @Html.Partial("_LoginPartial")

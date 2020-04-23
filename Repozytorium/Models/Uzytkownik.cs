@@ -45,6 +45,8 @@ namespace Repozytorium.Models
 
             public virtual ICollection<Zdjecie> Zdjecia { get; private set; }
 
+            public virtual Edytor Edytor { get; set; }
+
             
 
     }
