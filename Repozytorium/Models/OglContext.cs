@@ -31,6 +31,7 @@ namespace Repozytorium.Models
 
         public DbSet<Ogloszenie_Kategoria> Ogloszenie_Kategoria { get; set; }
         public DbSet<Edytor> Edytor { get; set; }
+        public DbSet<Bledy> Bledy { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

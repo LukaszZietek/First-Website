@@ -22,6 +22,8 @@ namespace Repozytorium.IRepo
 
         DbSet<Edytor> Edytor { get; set; }
 
+        DbSet<Bledy> Bledy { get; set; }
+
         int SaveChanges();
         Database Database { get; }
 

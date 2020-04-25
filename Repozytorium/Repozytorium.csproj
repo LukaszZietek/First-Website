@@ -161,6 +161,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>defaultDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="IRepo\IBladRepo.cs" />
     <Compile Include="IRepo\IEdytorRepo.cs" />
     <Compile Include="IRepo\IKategoriaRepo.cs" />
     <Compile Include="IRepo\IOglContext.cs" />
@@ -182,9 +183,15 @@
     <Compile Include="Migrations\202004231443017_AddEdytor.Designer.cs">
       <DependentUpon>202004231443017_AddEdytor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004251411216_DodanieBledow.cs" />
+    <Compile Include="Migrations\202004251411216_DodanieBledow.Designer.cs">
+      <DependentUpon>202004251411216_DodanieBledow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Bledy.cs" />
     <Compile Include="Models\Edytor.cs" />
-    <Compile Include="Models\EdytorRepo.cs" />
+    <Compile Include="Repo\BladRepo.cs" />
+    <Compile Include="Repo\EdytorRepo.cs" />
     <Compile Include="Models\Kategoria.cs" />
     <Compile Include="Models\OglContext.cs" />
     <Compile Include="Models\Ogloszenie.cs" />
@@ -230,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004231443017_AddEdytor.resx">
       <DependentUpon>202004231443017_AddEdytor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004251411216_DodanieBledow.resx">
+      <DependentUpon>202004251411216_DodanieBledow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

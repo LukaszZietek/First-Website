@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Aplikacja C# 6.0 i MVC 5 - Pierwsza", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Aplikacja C# 6.0 i MVC 5", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -50,10 +50,13 @@
                             <li>@Html.ActionLink("Lista pobrana z API", "Lista", "Kategoria")</li>
                         </ul>
                     </li>
-                    
-                        <li>@Html.ActionLink("Zdjęcia", "Lista", "Galeria")</li>
-                        <li>@Html.ActionLink("Edytor HTML", "EdytujTresc", "Edytor")</li>
-                    
+
+                    <li>@Html.ActionLink("Zdjęcia", "Lista", "Galeria")</li>
+                    <li>@Html.ActionLink("Edytor HTML", "EdytujTresc", "Edytor")</li>
+                    <li>@Html.ActionLink("Zgłoś błąd", "ZglaszanieBledu", "Blad")</li>
+                    <li>@Html.ActionLink("Moje błędy", "MojeBledy", "Blad")</li>
+
+
                 </ul>
 
                 @Html.Partial("_LoginPartial")

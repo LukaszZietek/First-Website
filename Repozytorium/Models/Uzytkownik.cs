@@ -25,6 +25,7 @@ namespace Repozytorium.Models
             {
                 this.Ogloszenia = new HashSet<Ogloszenie>();
                 this.Zdjecia = new HashSet<Zdjecie>();
+                this.Bledy = new HashSet<Bledy>();
             }
 
             public string Imie { get; set; }
@@ -46,6 +47,8 @@ namespace Repozytorium.Models
             public virtual ICollection<Zdjecie> Zdjecia { get; private set; }
 
             public virtual Edytor Edytor { get; set; }
+
+            public virtual ICollection<Bledy> Bledy { get; private set; }
 
             
 
