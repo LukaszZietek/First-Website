@@ -30,7 +30,7 @@ namespace OGL.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult ZglaszanieBledu([Bind(Include = "Id,Tresc")] Bledy bledy)
+        public ActionResult ZglaszanieBledu([Bind(Include = "TrescBledu")] Bledy bledy)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,25 @@ namespace OGL.Controllers
         {
             var uzytkownik = User.Identity.GetUserId();
             var bledy = _repo.PobierzOkresloneBledy(uzytkownik);
+            bledy = bledy.OrderBy(m => m.DataDodania);
             return View(bledy);
+        }
+
+        [Authorize]
+        public ActionResult Szczegoly(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Bledy blad = _repo.GetBladById((int) id);
+            if (blad == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(blad);
         }
 
 

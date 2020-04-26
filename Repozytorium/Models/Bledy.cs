@@ -18,7 +18,7 @@ namespace Repozytorium.Models
         [Display(Name = "Treść błędu: ")]
         public string TrescBledu { get; set; }
 
-        [Required]
+        
         [Display(Name = "Data dodania: ")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

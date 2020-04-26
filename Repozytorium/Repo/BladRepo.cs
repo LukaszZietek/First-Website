@@ -29,6 +29,12 @@ namespace Repozytorium.Repo
             return bledy;
         }
 
+        public Bledy GetBladById(int id)
+        {
+            var blad = _db.Bledy.Where(x => x.Id == id).FirstOrDefault();
+            return blad;
+        }
+
         public void DodajBlad(Bledy blad)
         {
             _db.Bledy.Add(blad);

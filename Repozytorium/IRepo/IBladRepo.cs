@@ -13,6 +13,8 @@ namespace Repozytorium.IRepo
 
         IEnumerable<Bledy> PobierzOkresloneBledy(string Id);
 
+        Bledy GetBladById(int id);
+
         void DodajBlad(Bledy blad);
 
         void SaveChanges();
